@@ -1,0 +1,17 @@
+{
+    "env": {
+        "browser": true,
+        "es2022": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "ignorePatterns": ["/dist/", "/gulp/", "/node_modules/"],
+    "rules": {
+			"import/extensions":"off"
+    }
+}

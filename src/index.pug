@@ -12,7 +12,7 @@ body
         h2.header__title Header
         |
         |
-        span.header__separator / 
+        span.header__separator  /  
         h2.header__logo Logo
       nav.header__nav 
         ul.header__nav-list 
@@ -26,121 +26,199 @@ body
             a(href="#") NAVLINK4
       .header__breadcrumbs 
         ul.header__bc-list 
-          li.header__bc-item
-            a(href="#") Breadcrumbs1
-          li.header__bc-item
-            a(href="#") Breadcrumbs1
-          li.header__bc-item
-            a(href="#") Breadcrumbs1
-  main.main 
-    .main__container.container
-      h1.main__title Heading level 1
-      .main__body.devide-content 
-        aside.filter
+          li.header__bc-item.link
+            a(href="#") Breadcrumb 1
+          li.header__bc-item.link
+            a(href="#") Breadcrumb 2
+          li.header__bc-item.link
+            a(href="#") Breadcrumb 3
+  .content
+    .content__container.container
+      aside.filter 
+        .filter__content
           h3.filter__title 26 Results Found
           .filter__body 
             form.filter__form(action="")
-              .filter__crit.criterian
-                h4.criterian__name Param 1
+              .filter__crit.criterian#criterian-first
+                .criterian__name 
+                  h4.criterian__title Param 1
+                  button(type='button').criterian__arrow ∨
                 .criterian__body 
-                  input.criterian__checkbox(type="checkbox", name="param1")
-                  input.criterian__checkbox(type="checkbox", name="param1")
-                  input.criterian__checkbox(type="checkbox", checked, name="param1")
-                  input.criterian__checkbox(type="checkbox", checked, name="param1")
-                  input.criterian__checkbox(type="checkbox", name="param1")
-              .filter__crit.criterian
-                h4.criterian__name Param 2
+                  label(for="crit-checkbox-1")
+                    input.criterian__checkbox#crit-checkbox-1(type="checkbox", name="param1")
+                    span Value 1
+                  label(for="crit-checkbox-2")
+                    input.criterian__checkbox#crit-checkbox-2(type="checkbox", name="param1")
+                    span Value 2
+                  label(for="crit-checkbox-3")
+                    input.criterian__checkbox#crit-checkbox-3(type="checkbox", checked, name="param1")
+                    span Value 3
+                  label(for="crit-checkbox-4")
+                    input.criterian__checkbox#crit-checkbox-4(type="checkbox", checked, name="param1")
+                    span Value 4
+                  label(for="crit-checkbox-5")
+                    input.criterian__checkbox#crit-checkbox-5(type="checkbox", name="param1")
+                    span Value 5
+              .filter__crit.criterian#criterian-second
+                .criterian__name 
+                  h4.criterian__title Param 2
+                  button(type='button').criterian__arrow ∨
                 .criterian__body 
-                  input.criterian__radio(type="radio", name="param2")
-                  input.criterian__radio(type="radio", name="param2")
-                  input.criterian__radio(type="radio", checked, name="param2")
-              .filter__crit.criterian
-                h4.criterian__name Param 3
+                  label(for="crit-radio-1") 
+                    input.criterian__radio#crit-radio-1(type="radio", name="param2")
+                    span Value 2_1
+                  label(for="crit-radio-2") 
+                    input.criterian__radio#crit-radio-2(type="radio", name="param2")
+                    span Value 2_1
+                  label(for="crit-radio-3") 
+                    input.criterian__radio#crit-radio-3(type="radio", checked, name="param2")
+                    span Value 2_1
+              .filter__crit.criterian#criterian-third
+                .criterian__name 
+                  h4.criterian__title Param 3
+                  button(type='button').criterian__arrow ∨
                 .criterian__body 
-                  input.filter-form__number(type="number", name="para3min")
-                  input.filter-form__number(type="number", name="para3max")
-              .filter__crit.criterian
-                h4.criterian__name Param 4
+                  input.criterian__number(type="number", name="para3min", placeholder='min')
+                  input.criterian__number(type="number", name="para3max", placeholder='max')
+              .filter__crit.criterian#criterian-fourth
+                .criterian__name 
+                  h4.criterian__title Param 4
+                  button(type='button').criterian__arrow ∨
                 .criterian__body 
-                  input.criterian__text(type="text", name="param4")
+                  input.criterian__text(type="text", name="param4", placeholder='Keyword')
+              button.filter__submit.button SEARCH
+      main.main 
         section.showcase  
+          h1.showcase__title Heading level 1
           .showcase__actions 
             .showcase__controls
-              button.showcase__prev-btn.button.white-btn &lt;
+              button.showcase__prev-btn.button &lt;
               .showcase__pages 
-                button.showcase__page-btn.button.white-btn 1
-                button.showcase__page-btn.button.white-btn 2
-              button.showcase__next-btn.button.white-btn &gt;
+                button.showcase__page-btn.button 1
+                button.showcase__page-btn.button 2
+              button.showcase__next-btn.button &gt;
             .showcase__sort Sort by
-              select.showcase__sort-options
+              select.showcase__sort-options 
+                option(selected, disabled) Sort options
                 option Point 1
                 option Point 2
                 option Point 3
           .showcase__products
             article.showcase__product.product
               .product__image 
-              .product__information
-                .product__title 
-                .product__description 
-                .product__tags  
-              .product__price 
-            article.showcase__product.product 
+              .product__body
+                .product__information
+                  h3.product__title Item Title 1
+                  .product__description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
+                .product__tags
+                  .product__tag 2017
+                  .product__tag 186 000 km
+                  .product__tag 6x4
+              .product__price $ 39 900
+            article.showcase__product.product
               .product__image 
-              .product__information
-                .product__title 
-                .product__description 
-                .product__tags  
-              .product__price 
-            article.showcase__product.product 
+              .product__body
+                .product__information
+                  h3.product__title Item Title 1
+                  .product__description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
+                .product__tags
+                  .product__tag 2017
+                  .product__tag 186 000 km
+                  .product__tag 6x4
+              .product__price $ 39 900
+            article.showcase__product.product
               .product__image 
-              .product__information
-                .product__title 
-                .product__description 
-                .product__tags  
-              .product__price 
-            article.showcase__product.product 
+              .product__body
+                .product__information
+                  h3.product__title Item Title 1
+                  .product__description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
+                .product__tags
+                  .product__tag 2017
+                  .product__tag 186 000 km
+                  .product__tag 6x4
+              .product__price $ 39 900
+            article.showcase__product.product
               .product__image 
-              .product__information
-                .product__title 
-                .product__description 
-                .product__tags  
-              .product__price 
-            article.showcase__product.product 
+              .product__body
+                .product__information
+                  h3.product__title Item Title 1
+                  .product__description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
+                .product__tags
+                  .product__tag 2017
+                  .product__tag 186 000 km
+                  .product__tag 6x4
+              .product__price $ 39 900
+            article.showcase__product.product
               .product__image 
-              .product__information
-                .product__title 
-                .product__description 
-                .product__tags  
-              .product__price 
+              .product__body
+                .product__information
+                  h3.product__title Item Title 1
+                  .product__description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
+                .product__tags
+                  .product__tag 2017
+                  .product__tag 186 000 km
+                  .product__tag 6x4
+              .product__price $ 39 900
           .showcase__actions 
             .showcase__controls
-              button.showcase__prev-btn.button.white-btn &lt;
+              button.showcase__prev-btn.button &lt;
               .showcase__pages 
-                button.showcase__page-btn.button.white-btn 1
-                button.showcase__page-btn.button.white-btn 2
-              button.showcase__next-btn.button.white-btn &gt;
+                button.showcase__page-btn.button 1
+                button.showcase__page-btn.button 2
+              button.showcase__next-btn.button &gt;
             .showcase__sort Sort by
               select.showcase__sort-options
+                option(selected, disabled) Sort options
                 option Point 1
                 option Point 2
                 option Point 3
-          .showcase__footer Footer information
+          .showcase__footer
+            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis? Quis quo molestias repellat? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda et at eveniet! Fugiat velit unde necessitatibus? Debitis illo vero aut. Iusto dolores, cupiditate error expedita veniam laborum repudiandae aspernatur eos?
+            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, link provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis? Quis quo molestias repellat?
+            p Iste, aliquid ducimus! Delectus in nisi quaerat temporibus blanditiis, molestias deleniti ea illum laudantium numquam. Laborum vero eligendi minus recusandae culpa sequi exercitationem iusto, ipsum sed suscipit fuga molestias veritatis!
   footer.footer 
     .footer__container.container
-        h2.footer__title 
-        .footer__body.devide-content
+      .footer__content
+        .footer__title 
+          h2.footer__logo Logo
+          |
+          |
+          span.footer__separator /
+          h2.footer__name Company name
+        .footer__body
           .footer__info 
-            .footer__location.contact-point
-              .contact-point__logo
-              .contact-point__info
-            .footer__number.contact-point
-              .contact-point__logo
-              .contact-point__info 
+            .footer__contacts 
+              .footer__location.contact-point
+                .contact-point__logo
+                  img(src="./assets/svg/location.svg", alt="")
+                .contact-point__info
+                  a(href="https://goo.gl/maps/JAjp4gPt8Nie2TfM6"). 
+                    Company Adress: Lorem ipsum dolor sit amet
+                    <br/>
+                    18600, Netherlands
+              .footer__number.contact-point
+                .contact-point__logo
+                  img(src="./assets/svg/phone.svg", alt="")
+                .contact-point__info 
+                  a(href="tel:+389587550000") +38 958 755-00-00 
             .footer__media
               .footer__icon
+                a(href="https://www.facebook.com/") 
+                  img(src="./assets/svg/facebook.svg", alt="")
               .footer__icon
+                a(href="https://www.instagram.com/") 
+                  img(src="./assets/svg/instagram.svg", alt="")
               .footer__icon
+                a(href="https://twitter.com/") 
+                  img(src="./assets/svg/twitter.svg", alt="")
               .footer__icon
-          .footer__text
-
-
+                a(href="https://www.youtube.com/") 
+                  img(src="./assets/svg/youtube.svg", alt="")
+          .footer__texts
+            p.footer__text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis. Quis quo molestias repellat.
+      .footer__copyright 
+        span © 2019
+        span.footer__dash - 
+        a.link(href="https://en.wikipedia.org/wiki/Privacy_policy") Privacy Policy
+        span.footer__dash - 
+        a.link(href="https://en.wikipedia.org/wiki/Terms_of_service") Terms and Conditions

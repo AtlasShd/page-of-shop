@@ -11,7 +11,7 @@
     <div class="header__container container"> 
       <div class="header__main"> 
         <h2 class="header__title">Header</h2>
-        <span class="header__separator">/ </span>
+        <span class="header__separator"> /  </span>
         <h2 class="header__logo">Logo</h2>
       </div>
       <nav class="header__nav"> 
@@ -24,67 +24,99 @@
       </nav>
       <div class="header__breadcrumbs"> 
         <ul class="header__bc-list"> 
-          <li class="header__bc-item"><a href="#">Breadcrumbs1</a></li>
-          <li class="header__bc-item"><a href="#">Breadcrumbs1</a></li>
-          <li class="header__bc-item"><a href="#">Breadcrumbs1</a></li>
+          <li class="header__bc-item link"><a href="#">Breadcrumb 1</a></li>
+          <li class="header__bc-item link"><a href="#">Breadcrumb 2</a></li>
+          <li class="header__bc-item link"><a href="#">Breadcrumb 3</a></li>
         </ul>
       </div>
     </div>
   </header>
-  <main class="main"> 
-    <div class="main__container container">
-      <h1 class="main__title">Heading level 1</h1>
-      <div class="main__body devide-content"> 
-        <aside class="filter">
+  <div class="content">
+    <div class="content__container container">
+      <aside class="filter"> 
+        <div class="filter__content">
           <h3 class="filter__title">26 Results Found</h3>
           <div class="filter__body"> 
             <form class="filter__form" action="">
-              <div class="filter__crit criterian">
-                <h4 class="criterian__name">Param 1</h4>
+              <div class="filter__crit criterian" id="criterian-first">
+                <div class="criterian__name"> 
+                  <h4 class="criterian__title">Param 1</h4>
+                  <button class="criterian__arrow" type="button">∨</button>
+                </div>
                 <div class="criterian__body"> 
-                  <input class="criterian__checkbox" type="checkbox" name="param1">
-                  <input class="criterian__checkbox" type="checkbox" name="param1">
-                  <input class="criterian__checkbox" type="checkbox" checked name="param1">
-                  <input class="criterian__checkbox" type="checkbox" checked name="param1">
-                  <input class="criterian__checkbox" type="checkbox" name="param1">
+                  <label for="crit-checkbox-1">
+                    <input class="criterian__checkbox" id="crit-checkbox-1" type="checkbox" name="param1"><span>Value 1</span>
+                  </label>
+                  <label for="crit-checkbox-2">
+                    <input class="criterian__checkbox" id="crit-checkbox-2" type="checkbox" name="param1"><span>Value 2</span>
+                  </label>
+                  <label for="crit-checkbox-3">
+                    <input class="criterian__checkbox" id="crit-checkbox-3" type="checkbox" checked name="param1"><span>Value 3</span>
+                  </label>
+                  <label for="crit-checkbox-4">
+                    <input class="criterian__checkbox" id="crit-checkbox-4" type="checkbox" checked name="param1"><span>Value 4</span>
+                  </label>
+                  <label for="crit-checkbox-5">
+                    <input class="criterian__checkbox" id="crit-checkbox-5" type="checkbox" name="param1"><span>Value 5</span>
+                  </label>
                 </div>
               </div>
-              <div class="filter__crit criterian">
-                <h4 class="criterian__name">Param 2</h4>
+              <div class="filter__crit criterian" id="criterian-second">
+                <div class="criterian__name"> 
+                  <h4 class="criterian__title">Param 2</h4>
+                  <button class="criterian__arrow" type="button">∨</button>
+                </div>
                 <div class="criterian__body"> 
-                  <input class="criterian__radio" type="radio" name="param2">
-                  <input class="criterian__radio" type="radio" name="param2">
-                  <input class="criterian__radio" type="radio" checked name="param2">
+                  <label for="crit-radio-1"> 
+                    <input class="criterian__radio" id="crit-radio-1" type="radio" name="param2"><span>Value 2_1</span>
+                  </label>
+                  <label for="crit-radio-2"> 
+                    <input class="criterian__radio" id="crit-radio-2" type="radio" name="param2"><span>Value 2_1</span>
+                  </label>
+                  <label for="crit-radio-3"> 
+                    <input class="criterian__radio" id="crit-radio-3" type="radio" checked name="param2"><span>Value 2_1</span>
+                  </label>
                 </div>
               </div>
-              <div class="filter__crit criterian">
-                <h4 class="criterian__name">Param 3</h4>
+              <div class="filter__crit criterian" id="criterian-third">
+                <div class="criterian__name"> 
+                  <h4 class="criterian__title">Param 3</h4>
+                  <button class="criterian__arrow" type="button">∨</button>
+                </div>
                 <div class="criterian__body"> 
-                  <input class="filter-form__number" type="number" name="para3min">
-                  <input class="filter-form__number" type="number" name="para3max">
+                  <input class="criterian__number" type="number" name="para3min" placeholder="min">
+                  <input class="criterian__number" type="number" name="para3max" placeholder="max">
                 </div>
               </div>
-              <div class="filter__crit criterian">
-                <h4 class="criterian__name">Param 4</h4>
+              <div class="filter__crit criterian" id="criterian-fourth">
+                <div class="criterian__name"> 
+                  <h4 class="criterian__title">Param 4</h4>
+                  <button class="criterian__arrow" type="button">∨</button>
+                </div>
                 <div class="criterian__body"> 
-                  <input class="criterian__text" type="text" name="param4">
+                  <input class="criterian__text" type="text" name="param4" placeholder="Keyword">
                 </div>
               </div>
+              <button class="filter__submit button">SEARCH</button>
             </form>
           </div>
-        </aside>
+        </div>
+      </aside>
+      <main class="main"> 
         <section class="showcase"> 
+          <h1 class="showcase__title">Heading level 1</h1>
           <div class="showcase__actions"> 
             <div class="showcase__controls">
-              <button class="showcase__prev-btn button white-btn">&lt;</button>
+              <button class="showcase__prev-btn button">&lt;</button>
               <div class="showcase__pages"> 
-                <button class="showcase__page-btn button white-btn">1</button>
-                <button class="showcase__page-btn button white-btn">2</button>
+                <button class="showcase__page-btn button">1</button>
+                <button class="showcase__page-btn button">2</button>
               </div>
-              <button class="showcase__next-btn button white-btn">&gt;</button>
+              <button class="showcase__next-btn button">&gt;</button>
             </div>
             <div class="showcase__sort">Sort by
-              <select class="showcase__sort-options">
+              <select class="showcase__sort-options"> 
+                <option selected disabled>Sort options</option>
                 <option>Point 1</option>
                 <option>Point 2</option>
                 <option>Point 3</option>
@@ -94,94 +126,143 @@
           <div class="showcase__products">
             <article class="showcase__product product">
               <div class="product__image"> </div>
-              <div class="product__information">
-                <div class="product__title"> </div>
-                <div class="product__description"> </div>
-                <div class="product__tags"> </div>
+              <div class="product__body">
+                <div class="product__information">
+                  <h3 class="product__title">Item Title 1</h3>
+                  <div class="product__description">Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? </div>
+                </div>
+                <div class="product__tags">
+                  <div class="product__tag">2017</div>
+                  <div class="product__tag">186 000 km</div>
+                  <div class="product__tag">6x4</div>
+                </div>
               </div>
-              <div class="product__price"> </div>
+              <div class="product__price">$ 39 900</div>
             </article>
-            <article class="showcase__product product"> 
+            <article class="showcase__product product">
               <div class="product__image"> </div>
-              <div class="product__information">
-                <div class="product__title"> </div>
-                <div class="product__description"> </div>
-                <div class="product__tags"> </div>
+              <div class="product__body">
+                <div class="product__information">
+                  <h3 class="product__title">Item Title 1</h3>
+                  <div class="product__description">Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? </div>
+                </div>
+                <div class="product__tags">
+                  <div class="product__tag">2017</div>
+                  <div class="product__tag">186 000 km</div>
+                  <div class="product__tag">6x4</div>
+                </div>
               </div>
-              <div class="product__price"> </div>
+              <div class="product__price">$ 39 900</div>
             </article>
-            <article class="showcase__product product"> 
+            <article class="showcase__product product">
               <div class="product__image"> </div>
-              <div class="product__information">
-                <div class="product__title"> </div>
-                <div class="product__description"> </div>
-                <div class="product__tags"> </div>
+              <div class="product__body">
+                <div class="product__information">
+                  <h3 class="product__title">Item Title 1</h3>
+                  <div class="product__description">Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? </div>
+                </div>
+                <div class="product__tags">
+                  <div class="product__tag">2017</div>
+                  <div class="product__tag">186 000 km</div>
+                  <div class="product__tag">6x4</div>
+                </div>
               </div>
-              <div class="product__price"> </div>
+              <div class="product__price">$ 39 900</div>
             </article>
-            <article class="showcase__product product"> 
+            <article class="showcase__product product">
               <div class="product__image"> </div>
-              <div class="product__information">
-                <div class="product__title"> </div>
-                <div class="product__description"> </div>
-                <div class="product__tags"> </div>
+              <div class="product__body">
+                <div class="product__information">
+                  <h3 class="product__title">Item Title 1</h3>
+                  <div class="product__description">Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? </div>
+                </div>
+                <div class="product__tags">
+                  <div class="product__tag">2017</div>
+                  <div class="product__tag">186 000 km</div>
+                  <div class="product__tag">6x4</div>
+                </div>
               </div>
-              <div class="product__price"> </div>
+              <div class="product__price">$ 39 900</div>
             </article>
-            <article class="showcase__product product"> 
+            <article class="showcase__product product">
               <div class="product__image"> </div>
-              <div class="product__information">
-                <div class="product__title"> </div>
-                <div class="product__description"> </div>
-                <div class="product__tags"> </div>
+              <div class="product__body">
+                <div class="product__information">
+                  <h3 class="product__title">Item Title 1</h3>
+                  <div class="product__description">Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? </div>
+                </div>
+                <div class="product__tags">
+                  <div class="product__tag">2017</div>
+                  <div class="product__tag">186 000 km</div>
+                  <div class="product__tag">6x4</div>
+                </div>
               </div>
-              <div class="product__price"> </div>
+              <div class="product__price">$ 39 900</div>
             </article>
           </div>
           <div class="showcase__actions"> 
             <div class="showcase__controls">
-              <button class="showcase__prev-btn button white-btn">&lt;</button>
+              <button class="showcase__prev-btn button">&lt;</button>
               <div class="showcase__pages"> 
-                <button class="showcase__page-btn button white-btn">1</button>
-                <button class="showcase__page-btn button white-btn">2</button>
+                <button class="showcase__page-btn button">1</button>
+                <button class="showcase__page-btn button">2</button>
               </div>
-              <button class="showcase__next-btn button white-btn">&gt;</button>
+              <button class="showcase__next-btn button">&gt;</button>
             </div>
             <div class="showcase__sort">Sort by
               <select class="showcase__sort-options">
+                <option selected disabled>Sort options</option>
                 <option>Point 1</option>
                 <option>Point 2</option>
                 <option>Point 3</option>
               </select>
             </div>
           </div>
-          <div class="showcase__footer">Footer information</div>
+          <div class="showcase__footer">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis? Quis quo molestias repellat? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda et at eveniet! Fugiat velit unde necessitatibus? Debitis illo vero aut. Iusto dolores, cupiditate error expedita veniam laborum repudiandae aspernatur eos?</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, link provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis? Quis quo molestias repellat?</p>
+            <p>Iste, aliquid ducimus! Delectus in nisi quaerat temporibus blanditiis, molestias deleniti ea illum laudantium numquam. Laborum vero eligendi minus recusandae culpa sequi exercitationem iusto, ipsum sed suscipit fuga molestias veritatis!</p>
+          </div>
         </section>
-      </div>
+      </main>
     </div>
-  </main>
+  </div>
   <footer class="footer"> 
     <div class="footer__container container">
-      <h2 class="footer__title"> </h2>
-      <div class="footer__body devide-content">
-        <div class="footer__info"> 
-          <div class="footer__location contact-point">
-            <div class="contact-point__logo"></div>
-            <div class="contact-point__info"></div>
+      <div class="footer__content">
+        <div class="footer__title"> 
+          <h2 class="footer__logo">Logo</h2>
+          <span class="footer__separator">/</span>
+          <h2 class="footer__name">Company name</h2>
+        </div>
+        <div class="footer__body">
+          <div class="footer__info"> 
+            <div class="footer__contacts"> 
+              <div class="footer__location contact-point">
+                <div class="contact-point__logo"><img src="./assets/svg/location.svg" alt=""></div>
+                <div class="contact-point__info"><a href="https://goo.gl/maps/JAjp4gPt8Nie2TfM6">
+                    Company Adress: Lorem ipsum dolor sit amet
+                    <br/>
+                    18600, Netherlands</a></div>
+              </div>
+              <div class="footer__number contact-point">
+                <div class="contact-point__logo"><img src="./assets/svg/phone.svg" alt=""></div>
+                <div class="contact-point__info"> <a href="tel:+389587550000">+38 958 755-00-00 </a></div>
+              </div>
+            </div>
+            <div class="footer__media">
+              <div class="footer__icon"><a href="https://www.facebook.com/"> <img src="./assets/svg/facebook.svg" alt=""></a></div>
+              <div class="footer__icon"><a href="https://www.instagram.com/"> <img src="./assets/svg/instagram.svg" alt=""></a></div>
+              <div class="footer__icon"><a href="https://twitter.com/"> <img src="./assets/svg/twitter.svg" alt=""></a></div>
+              <div class="footer__icon"><a href="https://www.youtube.com/"> <img src="./assets/svg/youtube.svg" alt=""></a></div>
+            </div>
           </div>
-          <div class="footer__number contact-point">
-            <div class="contact-point__logo"></div>
-            <div class="contact-point__info"> </div>
-          </div>
-          <div class="footer__media">
-            <div class="footer__icon"></div>
-            <div class="footer__icon"></div>
-            <div class="footer__icon"></div>
-            <div class="footer__icon"></div>
+          <div class="footer__texts">
+            <p class="footer__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis. Quis quo molestias repellat.</p>
           </div>
         </div>
-        <div class="footer__text"></div>
       </div>
+      <div class="footer__copyright"> <span>© 2019</span><span class="footer__dash">- </span><a class="link" href="https://en.wikipedia.org/wiki/Privacy_policy">Privacy Policy</a><span class="footer__dash">- </span><a class="link" href="https://en.wikipedia.org/wiki/Terms_of_service">Terms and Conditions</a></div>
     </div>
   </footer>
 </body>

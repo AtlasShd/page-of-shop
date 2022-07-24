@@ -3,16 +3,20 @@
 
 :root {
   --bg-gray: #d9d9d9;
+  --bg-disabled: #e0e0e0;
+  --font-disabled: #828282;
   --footer-gray: #4f4f4f;
   --dark-gray: #333333;
   --text-gray: #828282;
   --light-gray: #c4c4c4;
   --nav-gray: #8d8d8d;
   --border-gray: #bdbdbd;
+  --border-blue: #2d9cdb;
   --white: #ffffff;
   --blue: #56ccf2;
   --link-blue: #2f80ed;
-  --link-dark-blue: #235da8;
+  --link-hover: #56ccf2;
+  --link-visited: #9B51E0;
 }
 
 html {
@@ -21,6 +25,76 @@ html {
 
 #transition-none * {
   transition: none !important;
+}
+
+h1 {
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h2 {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h3 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h4 {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+a {
+  color: var(--link-blue);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: var(--link-visited);
+    text-decoration: none;
+  }
+}
+
+select,
+input[type="text"],
+input[type="number"] {
+  height: 35px;
+  padding: 7px 8px;
+  border: 1px solid var(--border-gray);
+  color: var(--text-gray);
+
+  &:focus {
+    color: var(--footer-gray);
+    border: 1px solid var(--border-blue);
+  }
+
+  &:disabled {
+    color: var(--font-disabled);
+    background: var(--bg-disabled);
+  }
 }
 
 .container {
@@ -37,31 +111,52 @@ html {
   background: var(--white);
   width: 35px;
   height: 35px;
+  transform: translate(0);
   font-size: 16px;
   font-weight: 400;
   line-height: 19px;
-  transition: background 0.25s ease-out 0s;
+  transition: background 0.25s ease-out 0s, box-shadow 0.25s ease-out 0s, transform 0.25s ease-out 0s;
 
-  &:hover,
+  &:hover {
+    background: var(--blue);
+    box-shadow: 0px 4px 6px 0px var(--dark-gray);
+    transform: translateY(-4px);
+  }
+
   &:active {
     background: var(--blue);
+    box-shadow: 0px 2px 3px 0px var(--dark-gray);
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    background: var(--bg-disabled);
   }
 }
 
-.link {
-  color: var(--link-blue) !important;
-  transition: color 0.25s ease-out 0s;
-
-  &:hover {
-    color: var(--link-dark-blue) !important;
-  }
+.active-page {
+  background: var(--blue);
+  box-shadow: 0px 2px 3px 0px var(--dark-gray);
+  transform: translateY(-2px);
 }
 
 .header,
-.content,
+.content {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-align: left;
+}
+
 .footer {
   font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
   letter-spacing: 0;
+  text-align: left;
 }
 
 // header 
@@ -79,9 +174,6 @@ html {
     padding: 16px;
     background: var(--white);
     margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 21px;
   }
 
   &__title {}
@@ -99,9 +191,6 @@ html {
     padding: 16px;
     background: var(--white);
     color: var(--nav-gray);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
   }
 
   &__nav-list {
@@ -111,6 +200,10 @@ html {
 
   &__nav-item {
     display: inline;
+
+    & a {
+      color: var(--nav-gray);
+    }
   }
 
   &__breadcrumbs {
@@ -118,6 +211,9 @@ html {
     align-items: center;
     height: 40px;
     padding: 16px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
   }
 
   &__bc-list {
@@ -165,9 +261,6 @@ html {
   &__title {
     height: 48px;
     color: var(--dark-gray);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19px;
   }
 
   &__body {
@@ -184,14 +277,15 @@ html {
     margin: 24px 0;
     background: var(--blue);
     color: var(--white);
+
+    &:disabled {
+      color: var(--bg-disabled);
+    }
   }
 }
 
 .criterian {
   padding: 8px 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19px;
 
   &__name {
     display: flex;
@@ -203,7 +297,7 @@ html {
   &__title {}
 
   &__arrow {
-    color: var(--text-gray);
+    background: none;
   }
 
   &__body {
@@ -215,22 +309,110 @@ html {
     margin-right: 8px;
   }
 
-  &__radio {
+  &__checkbox-label,
+  &__radio-label {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__square {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-blue);
     margin-right: 8px;
+    padding: 2px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: var(--border-blue) url('../assets/svg/mark.svg') no-repeat center center;
+      transform: scale(0);
+      transition: transform 0.15s;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+    margin-right: 8px;
+
+    &:checked+.criterian__square::before {
+      transform: scale(1.5);
+    }
+
+    &:disabled+.criterian__square {
+      border: 1px solid var(--font-disabled);
+
+      &::before {
+        background: var(--white);
+      }
+
+      &+.criterian__text {
+        color: var(--font-disabled);
+      }
+    }
+  }
+
+  &__circle {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-blue);
+    border-radius: 50%;
+    margin-right: 8px;
+    padding: 2px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: var(--border-blue);
+      border-radius: 50px;
+      transform: scale(0);
+      transition: transform 0.15s;
+    }
+  }
+
+  &__radio {
+    display: none;
+    margin-right: 8px;
+
+    &:checked+.criterian__circle::before {
+      transform: scale(1);
+    }
+
+    &:disabled+.criterian__circle {
+      border: 1px solid var(--font-disabled);
+
+      &+.criterian__text {
+        color: var(--font-disabled);
+      }
+    }
   }
 
   &__number {
     width: 50%;
-    height: 35px;
-    padding: 4px;
-    border: 1px solid var(--border-gray);
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0;
+
   }
 
   &__text {
     width: 100%;
-    height: 35px;
-    padding: 4px;
-    border: 1px solid var(--border-gray);
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0;
+
   }
 }
 
@@ -263,9 +445,6 @@ html {
 
   &__title {
     height: 50px;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 26px;
   }
 
   &__actions {
@@ -292,13 +471,16 @@ html {
   &__sort {}
 
   &__sort-options {
+    appearance: none;
     width: 207px;
-    height: 35px;
-    padding-left: 10px;
-    color: var(--text-gray);
+    background: var(--white) url('../assets/svg/arrow.svg') no-repeat calc(100% - 8px) center;
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
+
+    &:focus {
+      background: var(--white) url('../assets/svg/focusedArrow.svg') no-repeat calc(100% - 8px) center;
+    }
   }
 
   &__products {
@@ -316,10 +498,6 @@ html {
     row-gap: 16px;
     max-width: 62.5%;
     margin: 24px 0;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
   }
 }
 
@@ -347,15 +525,13 @@ html {
 
   &__title {
     padding-bottom: 7px;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 21px;
   }
 
   &__description {
     font-size: 14px;
     font-weight: 300;
     line-height: 16px;
+    color: var(--text-gray);
   }
 
   &__tags {
@@ -376,9 +552,6 @@ html {
 
   &__price {
     flex: 0 0 25%;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19px;
     text-align: right;
   }
 }
@@ -413,9 +586,6 @@ html {
   &__body {
     display: flex;
     column-gap: 20px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16px;
     color: var(--footer-gray);
   }
 
@@ -423,7 +593,7 @@ html {
     flex: 0 0 270px;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 0 16px;
     row-gap: 16px;
   }
 
@@ -436,7 +606,7 @@ html {
   &__location,
   &__number {
     &:hover {
-      color: var(--link-dark-blue);
+      color: var(--link-hover);
     }
   }
 
@@ -475,7 +645,9 @@ html {
     margin-right: 10px;
   }
 
-  &__info {}
+  &__info a {
+    color: var(--footer-gray);
+  }
 }
 
 //footer

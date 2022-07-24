@@ -9,11 +9,11 @@ body
   header.header 
     .header__container.container 
       .header__main 
-        h2.header__title Header
+        h3.header__title Header
         |
         |
         span.header__separator  /  
-        h2.header__logo Logo
+        h3.header__logo Logo
       nav.header__nav 
         ul.header__nav-list 
           li.header__nav-item 
@@ -26,11 +26,11 @@ body
             a(href="#") NAVLINK4
       .header__breadcrumbs 
         ul.header__bc-list 
-          li.header__bc-item.link
+          li.header__bc-item
             a(href="#") Breadcrumb 1
-          li.header__bc-item.link
+          li.header__bc-item
             a(href="#") Breadcrumb 2
-          li.header__bc-item.link
+          li.header__bc-item
             a(href="#") Breadcrumb 3
   .content
     .content__container.container
@@ -42,48 +42,60 @@ body
               .filter__crit.criterian#criterian-first
                 .criterian__name 
                   h4.criterian__title Param 1
-                  button(type='button').criterian__arrow ∨
+                  button(type='button').criterian__arrow 
+                    img(src="./assets/svg/arrow.svg", alt="")
                 .criterian__body 
-                  label(for="crit-checkbox-1")
+                  label.criterian__checkbox-label(for="crit-checkbox-1")
                     input.criterian__checkbox#crit-checkbox-1(type="checkbox", name="param1")
-                    span Value 1
-                  label(for="crit-checkbox-2")
+                    span.criterian__square
+                    span.criterian__text Value 1
+                  label.criterian__checkbox-label(for="crit-checkbox-2")
                     input.criterian__checkbox#crit-checkbox-2(type="checkbox", name="param1")
-                    span Value 2
-                  label(for="crit-checkbox-3")
+                    span.criterian__square
+                    span.criterian__text Value 2
+                  label.criterian__checkbox-label(for="crit-checkbox-3")
                     input.criterian__checkbox#crit-checkbox-3(type="checkbox", checked, name="param1")
-                    span Value 3
-                  label(for="crit-checkbox-4")
+                    span.criterian__square
+                    span.criterian__text Value 3
+                  label.criterian__checkbox-label(for="crit-checkbox-4")
                     input.criterian__checkbox#crit-checkbox-4(type="checkbox", checked, name="param1")
-                    span Value 4
-                  label(for="crit-checkbox-5")
+                    span.criterian__square
+                    span.criterian__text Value 4
+                  label.criterian__checkbox-label(for="crit-checkbox-5")
                     input.criterian__checkbox#crit-checkbox-5(type="checkbox", name="param1")
-                    span Value 5
+                    span.criterian__square
+                    span.criterian__text Value 5
               .filter__crit.criterian#criterian-second
                 .criterian__name 
                   h4.criterian__title Param 2
-                  button(type='button').criterian__arrow ∨
+                  button(type='button').criterian__arrow 
+                    img(src="./assets/svg/arrow.svg", alt="")
                 .criterian__body 
-                  label(for="crit-radio-1") 
+                  label.criterian__radio-label(for="crit-radio-1") 
                     input.criterian__radio#crit-radio-1(type="radio", name="param2")
-                    span Value 2_1
-                  label(for="crit-radio-2") 
+                    span.criterian__circle
+                    span.criterian__text Value 2_1
+                  label.criterian__radio-label(for="crit-radio-2") 
                     input.criterian__radio#crit-radio-2(type="radio", name="param2")
-                    span Value 2_1
-                  label(for="crit-radio-3") 
+                    span.criterian__circle
+                    span.criterian__text Value 2_2
+                  label.criterian__radio-label(for="crit-radio-3") 
                     input.criterian__radio#crit-radio-3(type="radio", checked, name="param2")
-                    span Value 2_1
+                    span.criterian__circle
+                    span.criterian__text Value 2_3
               .filter__crit.criterian#criterian-third
                 .criterian__name 
                   h4.criterian__title Param 3
-                  button(type='button').criterian__arrow ∨
+                  button(type='button').criterian__arrow 
+                    img(src="./assets/svg/arrow.svg", alt="")
                 .criterian__body 
                   input.criterian__number(type="number", name="para3min", placeholder='min')
                   input.criterian__number(type="number", name="para3max", placeholder='max')
               .filter__crit.criterian#criterian-fourth
                 .criterian__name 
                   h4.criterian__title Param 4
-                  button(type='button').criterian__arrow ∨
+                  button(type='button').criterian__arrow 
+                    img(src="./assets/svg/arrow.svg", alt="")
                 .criterian__body 
                   input.criterian__text(type="text", name="param4", placeholder='Keyword')
               button.filter__submit.button SEARCH
@@ -95,10 +107,10 @@ body
               button.showcase__prev-btn.button &lt;
               .showcase__pages 
                 button.showcase__page-btn.button 1
-                button.showcase__page-btn.button 2
+                button.showcase__page-btn.button.active-page 2
               button.showcase__next-btn.button &gt;
             .showcase__sort Sort by
-              select.showcase__sort-options 
+              select.showcase__sort-options
                 option(selected, disabled) Sort options
                 option Point 1
                 option Point 2
@@ -164,7 +176,7 @@ body
               button.showcase__prev-btn.button &lt;
               .showcase__pages 
                 button.showcase__page-btn.button 1
-                button.showcase__page-btn.button 2
+                button.showcase__page-btn.button.active-page 2
               button.showcase__next-btn.button &gt;
             .showcase__sort Sort by
               select.showcase__sort-options
@@ -219,6 +231,6 @@ body
       .footer__copyright 
         span © 2019
         span.footer__dash - 
-        a.link(href="https://en.wikipedia.org/wiki/Privacy_policy") Privacy Policy
+        a(href="https://en.wikipedia.org/wiki/Privacy_policy") Privacy Policy
         span.footer__dash - 
-        a.link(href="https://en.wikipedia.org/wiki/Terms_of_service") Terms and Conditions
+        a(href="https://en.wikipedia.org/wiki/Terms_of_service") Terms and Conditions

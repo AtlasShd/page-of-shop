@@ -10,9 +10,9 @@
   <header class="header"> 
     <div class="header__container container"> 
       <div class="header__main"> 
-        <h2 class="header__title">Header</h2>
+        <h3 class="header__title">Header</h3>
         <span class="header__separator"> /  </span>
-        <h2 class="header__logo">Logo</h2>
+        <h3 class="header__logo">Logo</h3>
       </div>
       <nav class="header__nav"> 
         <ul class="header__nav-list"> 
@@ -24,9 +24,9 @@
       </nav>
       <div class="header__breadcrumbs"> 
         <ul class="header__bc-list"> 
-          <li class="header__bc-item link"><a href="#">Breadcrumb 1</a></li>
-          <li class="header__bc-item link"><a href="#">Breadcrumb 2</a></li>
-          <li class="header__bc-item link"><a href="#">Breadcrumb 3</a></li>
+          <li class="header__bc-item"><a href="#">Breadcrumb 1</a></li>
+          <li class="header__bc-item"><a href="#">Breadcrumb 2</a></li>
+          <li class="header__bc-item"><a href="#">Breadcrumb 3</a></li>
         </ul>
       </div>
     </div>
@@ -41,47 +41,47 @@
               <div class="filter__crit criterian" id="criterian-first">
                 <div class="criterian__name"> 
                   <h4 class="criterian__title">Param 1</h4>
-                  <button class="criterian__arrow" type="button">∨</button>
+                  <button class="criterian__arrow" type="button"> <img src="./assets/svg/arrow.svg" alt=""></button>
                 </div>
                 <div class="criterian__body"> 
-                  <label for="crit-checkbox-1">
-                    <input class="criterian__checkbox" id="crit-checkbox-1" type="checkbox" name="param1"><span>Value 1</span>
+                  <label class="criterian__checkbox-label" for="crit-checkbox-1">
+                    <input class="criterian__checkbox" id="crit-checkbox-1" type="checkbox" name="param1"><span class="criterian__square"></span><span class="criterian__text">Value 1</span>
                   </label>
-                  <label for="crit-checkbox-2">
-                    <input class="criterian__checkbox" id="crit-checkbox-2" type="checkbox" name="param1"><span>Value 2</span>
+                  <label class="criterian__checkbox-label" for="crit-checkbox-2">
+                    <input class="criterian__checkbox" id="crit-checkbox-2" type="checkbox" name="param1"><span class="criterian__square"></span><span class="criterian__text">Value 2</span>
                   </label>
-                  <label for="crit-checkbox-3">
-                    <input class="criterian__checkbox" id="crit-checkbox-3" type="checkbox" checked name="param1"><span>Value 3</span>
+                  <label class="criterian__checkbox-label" for="crit-checkbox-3">
+                    <input class="criterian__checkbox" id="crit-checkbox-3" type="checkbox" checked name="param1"><span class="criterian__square"></span><span class="criterian__text">Value 3</span>
                   </label>
-                  <label for="crit-checkbox-4">
-                    <input class="criterian__checkbox" id="crit-checkbox-4" type="checkbox" checked name="param1"><span>Value 4</span>
+                  <label class="criterian__checkbox-label" for="crit-checkbox-4">
+                    <input class="criterian__checkbox" id="crit-checkbox-4" type="checkbox" checked name="param1"><span class="criterian__square"></span><span class="criterian__text">Value 4</span>
                   </label>
-                  <label for="crit-checkbox-5">
-                    <input class="criterian__checkbox" id="crit-checkbox-5" type="checkbox" name="param1"><span>Value 5</span>
+                  <label class="criterian__checkbox-label" for="crit-checkbox-5">
+                    <input class="criterian__checkbox" id="crit-checkbox-5" type="checkbox" name="param1"><span class="criterian__square"></span><span class="criterian__text">Value 5</span>
                   </label>
                 </div>
               </div>
               <div class="filter__crit criterian" id="criterian-second">
                 <div class="criterian__name"> 
                   <h4 class="criterian__title">Param 2</h4>
-                  <button class="criterian__arrow" type="button">∨</button>
+                  <button class="criterian__arrow" type="button"> <img src="./assets/svg/arrow.svg" alt=""></button>
                 </div>
                 <div class="criterian__body"> 
-                  <label for="crit-radio-1"> 
-                    <input class="criterian__radio" id="crit-radio-1" type="radio" name="param2"><span>Value 2_1</span>
+                  <label class="criterian__radio-label" for="crit-radio-1"> 
+                    <input class="criterian__radio" id="crit-radio-1" type="radio" name="param2"><span class="criterian__circle"></span><span class="criterian__text">Value 2_1</span>
                   </label>
-                  <label for="crit-radio-2"> 
-                    <input class="criterian__radio" id="crit-radio-2" type="radio" name="param2"><span>Value 2_1</span>
+                  <label class="criterian__radio-label" for="crit-radio-2"> 
+                    <input class="criterian__radio" id="crit-radio-2" type="radio" name="param2"><span class="criterian__circle"></span><span class="criterian__text">Value 2_2</span>
                   </label>
-                  <label for="crit-radio-3"> 
-                    <input class="criterian__radio" id="crit-radio-3" type="radio" checked name="param2"><span>Value 2_1</span>
+                  <label class="criterian__radio-label" for="crit-radio-3"> 
+                    <input class="criterian__radio" id="crit-radio-3" type="radio" checked name="param2"><span class="criterian__circle"></span><span class="criterian__text">Value 2_3</span>
                   </label>
                 </div>
               </div>
               <div class="filter__crit criterian" id="criterian-third">
                 <div class="criterian__name"> 
                   <h4 class="criterian__title">Param 3</h4>
-                  <button class="criterian__arrow" type="button">∨</button>
+                  <button class="criterian__arrow" type="button"> <img src="./assets/svg/arrow.svg" alt=""></button>
                 </div>
                 <div class="criterian__body"> 
                   <input class="criterian__number" type="number" name="para3min" placeholder="min">
@@ -91,7 +91,7 @@
               <div class="filter__crit criterian" id="criterian-fourth">
                 <div class="criterian__name"> 
                   <h4 class="criterian__title">Param 4</h4>
-                  <button class="criterian__arrow" type="button">∨</button>
+                  <button class="criterian__arrow" type="button"> <img src="./assets/svg/arrow.svg" alt=""></button>
                 </div>
                 <div class="criterian__body"> 
                   <input class="criterian__text" type="text" name="param4" placeholder="Keyword">
@@ -110,12 +110,12 @@
               <button class="showcase__prev-btn button">&lt;</button>
               <div class="showcase__pages"> 
                 <button class="showcase__page-btn button">1</button>
-                <button class="showcase__page-btn button">2</button>
+                <button class="showcase__page-btn button active-page">2</button>
               </div>
               <button class="showcase__next-btn button">&gt;</button>
             </div>
             <div class="showcase__sort">Sort by
-              <select class="showcase__sort-options"> 
+              <select class="showcase__sort-options">
                 <option selected disabled>Sort options</option>
                 <option>Point 1</option>
                 <option>Point 2</option>
@@ -205,7 +205,7 @@
               <button class="showcase__prev-btn button">&lt;</button>
               <div class="showcase__pages"> 
                 <button class="showcase__page-btn button">1</button>
-                <button class="showcase__page-btn button">2</button>
+                <button class="showcase__page-btn button active-page">2</button>
               </div>
               <button class="showcase__next-btn button">&gt;</button>
             </div>
@@ -262,7 +262,7 @@
           </div>
         </div>
       </div>
-      <div class="footer__copyright"> <span>© 2019</span><span class="footer__dash">- </span><a class="link" href="https://en.wikipedia.org/wiki/Privacy_policy">Privacy Policy</a><span class="footer__dash">- </span><a class="link" href="https://en.wikipedia.org/wiki/Terms_of_service">Terms and Conditions</a></div>
+      <div class="footer__copyright"> <span>© 2019</span><span class="footer__dash">- </span><a href="https://en.wikipedia.org/wiki/Privacy_policy">Privacy Policy</a><span class="footer__dash">- </span><a href="https://en.wikipedia.org/wiki/Terms_of_service">Terms and Conditions</a></div>
     </div>
   </footer>
 </body>

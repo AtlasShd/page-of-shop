@@ -1,6 +1,9 @@
 'use strict';
 
 import pug from 'gulp-pug';
+import template from 'gulp-template';
+
+import dataset from '../dataset.json' assert {type: "json"};
 
 export const html = () => {
 	return app.gulp
@@ -13,6 +16,7 @@ export const html = () => {
 				})
 			)
 		)
+    .pipe(template({dataset}))
     .pipe(pug({
       pretty: true,
     }))

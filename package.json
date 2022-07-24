@@ -52,6 +52,7 @@
 		"gulp-replace": "latest",
 		"gulp-sass": "latest",
 		"gulp-sharp-responsive": "latest",
+		"gulp-template": "^5.0.0",
 		"gulp-ttf2woff2": "latest",
 		"gulp-version-number": "latest",
 		"gulp-webp": "latest",

@@ -523,12 +523,21 @@ input[type=number]:disabled {
   display: flex;
   padding: 16px;
   background: var(--white);
+  color: inherit;
+  text-decoration: none;
+}
+.product:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.product:visited {
+  color: inherit;
+  text-decoration: none;
 }
 .product__image {
   flex: 0 0 25%;
-  width: 224px;
-  height: 168px;
-  background: var(--bg-gray);
+  max-width: 224px;
+  object-fit: cover;
 }
 .product__body {
   flex: 1 1 50%;

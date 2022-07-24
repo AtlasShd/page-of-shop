@@ -3,35 +3,36 @@ html
   meta(charset="UTF-8")
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
   meta(http-equiv="X-UA-Compatible", content="ie=edge")
+  meta(name="keywords" content="<%= dataset.page_meta.meta_keywords %>")
+  meta(name="description" content="<%= dataset.page_meta.meta_description %>")
   link(rel="stylesheet", href="css/style.min.css")
-  title core
+  title <%= dataset.page_meta.title %>
 body 
   header.header 
     .header__container.container 
       .header__main 
-        h3.header__title Header
-        |
-        |
+        h3.header__title 
+        | Header
         span.header__separator  /  
         h3.header__logo Logo
       nav.header__nav 
         ul.header__nav-list 
           li.header__nav-item 
-            a(href="#") NAVLINK1 
+            a(href="<%= dataset.nav[0].href %>") <%= dataset.nav[0].text %>
           li.header__nav-item
-            a(href="#") NAVLINK2
+            a(href="<%= dataset.nav[1].href %>") <%= dataset.nav[1].text %>
           li.header__nav-item
-            a(href="#") NAVLINK3
+            a(href="<%= dataset.nav[2].href %>") <%= dataset.nav[2].text %>
           li.header__nav-item
-            a(href="#") NAVLINK4
+            a(href="<%= dataset.nav[3].href %>") <%= dataset.nav[3].text %>
       .header__breadcrumbs 
         ul.header__bc-list 
           li.header__bc-item
-            a(href="#") Breadcrumb 1
+            a(href="<%= dataset.breadcrumbs[0].href %>") <%= dataset.breadcrumbs[0].text %>
           li.header__bc-item
-            a(href="#") Breadcrumb 2
+            a(href="<%= dataset.breadcrumbs[1].href %>") <%= dataset.breadcrumbs[1].text %>
           li.header__bc-item
-            a(href="#") Breadcrumb 3
+            a(href="<%= dataset.breadcrumbs[2].href %>") <%= dataset.breadcrumbs[2].text %>
   .content
     .content__container.container
       aside.filter 
@@ -101,7 +102,7 @@ body
               button.filter__submit.button SEARCH
       main.main 
         section.showcase  
-          h1.showcase__title Heading level 1
+          h1.showcase__title <%= dataset.page_meta.h1 %>
           .showcase__actions 
             .showcase__controls
               button.showcase__prev-btn.button &lt;
@@ -116,61 +117,78 @@ body
                 option Point 2
                 option Point 3
           .showcase__products
-            article.showcase__product.product
-              .product__image 
-              .product__body
-                .product__information
-                  h3.product__title Item Title 1
-                  .product__description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
-                .product__tags
-                  .product__tag 2017
-                  .product__tag 186 000 km
-                  .product__tag 6x4
-              .product__price $ 39 900
-            article.showcase__product.product
-              .product__image 
-              .product__body
-                .product__information
-                  h3.product__title Item Title 1
-                  .product__description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
-                .product__tags
-                  .product__tag 2017
-                  .product__tag 186 000 km
-                  .product__tag 6x4
-              .product__price $ 39 900
-            article.showcase__product.product
-              .product__image 
-              .product__body
-                .product__information
-                  h3.product__title Item Title 1
-                  .product__description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
-                .product__tags
-                  .product__tag 2017
-                  .product__tag 186 000 km
-                  .product__tag 6x4
-              .product__price $ 39 900
-            article.showcase__product.product
-              .product__image 
-              .product__body
-                .product__information
-                  h3.product__title Item Title 1
-                  .product__description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
-                .product__tags
-                  .product__tag 2017
-                  .product__tag 186 000 km
-                  .product__tag 6x4
-              .product__price $ 39 900
-            article.showcase__product.product
-              .product__image 
-              .product__body
-                .product__information
-                  h3.product__title Item Title 1
-                  .product__description Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quis distinctio, officia tenetur a eaque deleniti, impedit accusamus, alias provident sint id odio neque laudantium! Saepe quisquam libero soluta itaque? 
-                .product__tags
-                  .product__tag 2017
-                  .product__tag 186 000 km
-                  .product__tag 6x4
-              .product__price $ 39 900
+            article.showcase__product 
+              a(href="<%= dataset.stock[0].href %>").product
+                img(src="./assets/img/<%= dataset.stock[0].image %>", alt="").product__image 
+                .product__body
+                  .product__information
+                    h3.product__title <%= dataset.stock[0].title %>
+                    .product__description Item Description: Made by <%= dataset.stock[0].make %>; <%= dataset.stock[0].model %> model; type: <%= dataset.stock[0].type %>; <%= dataset.stock[0].power %> <%= dataset.stock[0].power_measure %> power; <%= dataset.stock[0].payload %> payload; <%= dataset.stock[0].gross_weight %> grossweight.
+                  .product__tags
+                    .product__tag <%= dataset.stock[0].year %>
+                    .product__tag <%= dataset.stock[0].mileage %> <%= dataset.stock[0].mileage_measure %>
+                    .product__tag <%= dataset.stock[0].axle_configuration %>
+                .product__price <%= dataset.stock[0].price_currency %> <%= dataset.stock[0].price %>
+            article.showcase__product 
+              a(href="<%= dataset.stock[1].href %>").product
+                img(src="./assets/img/<%= dataset.stock[1].image %>", alt="").product__image 
+                .product__body
+                  .product__information
+                    h3.product__title <%= dataset.stock[1].title %>
+                    .product__description Item Description: Made by <%= dataset.stock[1].make %>; <%= dataset.stock[1].model %> model; type: <%= dataset.stock[1].type %>; <%= dataset.stock[1].power %> <%= dataset.stock[1].power_measure %> power; <%= dataset.stock[1].payload %> payload; <%= dataset.stock[1].gross_weight %> grossweight.
+                  .product__tags
+                    .product__tag <%= dataset.stock[1].year %>
+                    .product__tag <%= dataset.stock[1].mileage %> <%= dataset.stock[1].mileage_measure %>
+                    .product__tag <%= dataset.stock[1].axle_configuration %>
+                .product__price <%= dataset.stock[1].price_currency %> <%= dataset.stock[1].price %>
+            article.showcase__product 
+              a(href="<%= dataset.stock[2].href %>").product
+                img(src="./assets/img/<%= dataset.stock[2].image %>", alt="").product__image 
+                .product__body
+                  .product__information
+                    h3.product__title <%= dataset.stock[2].title %>
+                    .product__description Item Description: Made by <%= dataset.stock[2].make %>; <%= dataset.stock[2].model %> model; type: <%= dataset.stock[2].type %>; <%= dataset.stock[2].power %> <%= dataset.stock[2].power_measure %> power; <%= dataset.stock[2].payload %> payload; <%= dataset.stock[2].gross_weight %> grossweight.
+                  .product__tags
+                    .product__tag <%= dataset.stock[2].year %>
+                    .product__tag <%= dataset.stock[2].mileage %> <%= dataset.stock[2].mileage_measure %>
+                    .product__tag <%= dataset.stock[2].axle_configuration %>
+                .product__price <%= dataset.stock[2].price_currency %> <%= dataset.stock[2].price %>
+            article.showcase__product 
+              a(href="<%= dataset.stock[3].href %>").product
+                img(src="./assets/img/<%= dataset.stock[3].image %>", alt="").product__image 
+                .product__body
+                  .product__information
+                    h3.product__title <%= dataset.stock[3].title %>
+                    .product__description Item Description: Made by <%= dataset.stock[3].make %>; <%= dataset.stock[3].model %> model; type: <%= dataset.stock[3].type %>; <%= dataset.stock[3].power %> <%= dataset.stock[3].power_measure %> power; <%= dataset.stock[3].payload %> payload; <%= dataset.stock[3].gross_weight %> grossweight.
+                  .product__tags
+                    .product__tag <%= dataset.stock[3].year %>
+                    .product__tag <%= dataset.stock[3].mileage %> <%= dataset.stock[3].mileage_measure %>
+                    .product__tag <%= dataset.stock[3].axle_configuration %>
+                .product__price <%= dataset.stock[3].price_currency %> <%= dataset.stock[3].price %>
+            article.showcase__product 
+              a(href="<%= dataset.stock[4].href %>").product
+                img(src="./assets/img/<%= dataset.stock[4].image %>", alt="").product__image 
+                .product__body
+                  .product__information
+                    h3.product__title <%= dataset.stock[4].title %>
+                    .product__description Item Description: Made by <%= dataset.stock[4].make %>; <%= dataset.stock[4].model %> model; type: <%= dataset.stock[4].type %>; <%= dataset.stock[4].power %> <%= dataset.stock[4].power_measure %> power; <%= dataset.stock[4].payload %> payload; <%= dataset.stock[4].gross_weight %> grossweight.
+                  .product__tags
+                    .product__tag <%= dataset.stock[4].year %>
+                    .product__tag <%= dataset.stock[4].mileage %> <%= dataset.stock[4].mileage_measure %>
+                    .product__tag <%= dataset.stock[4].axle_configuration %>
+                .product__price <%= dataset.stock[4].price_currency %> <%= dataset.stock[4].price %>
+            article.showcase__product 
+              a(href="<%= dataset.stock[5].href %>").product
+                img(src="./assets/img/<%= dataset.stock[5].image %>", alt="").product__image 
+                .product__body
+                  .product__information
+                    h3.product__title <%= dataset.stock[5].title %>
+                    .product__description Item Description: Made by <%= dataset.stock[5].make %>; <%= dataset.stock[5].model %> model; type: <%= dataset.stock[5].type %>; <%= dataset.stock[5].power %> <%= dataset.stock[5].power_measure %> power; <%= dataset.stock[5].payload %> payload; <%= dataset.stock[5].gross_weight %> grossweight.
+                  .product__tags
+                    .product__tag <%= dataset.stock[5].year %>
+                    .product__tag <%= dataset.stock[5].mileage %> <%= dataset.stock[5].mileage_measure %>
+                    .product__tag <%= dataset.stock[5].axle_configuration %>
+                .product__price <%= dataset.stock[5].price_currency %> <%= dataset.stock[5].price %>
           .showcase__actions 
             .showcase__controls
               button.showcase__prev-btn.button &lt;
@@ -185,9 +203,9 @@ body
                 option Point 2
                 option Point 3
           .showcase__footer
-            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis? Quis quo molestias repellat? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda et at eveniet! Fugiat velit unde necessitatibus? Debitis illo vero aut. Iusto dolores, cupiditate error expedita veniam laborum repudiandae aspernatur eos?
-            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione molestias soluta, link provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis? Quis quo molestias repellat?
-            p Iste, aliquid ducimus! Delectus in nisi quaerat temporibus blanditiis, molestias deleniti ea illum laudantium numquam. Laborum vero eligendi minus recusandae culpa sequi exercitationem iusto, ipsum sed suscipit fuga molestias veritatis!
+            <%= dataset.page_text[0].tag %> <%= dataset.page_text[0].content %>
+            <%= dataset.page_text[1].tag %> <%= dataset.page_text[1].content %>
+            <%= dataset.page_text[2].tag %> <%= dataset.page_text[2].content %>
   footer.footer 
     .footer__container.container
       .footer__content

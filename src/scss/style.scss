@@ -176,13 +176,9 @@ input[type="number"] {
     margin-bottom: 20px;
   }
 
-  &__title {}
-
   &__separator {
     padding: 0 5px;
   }
-
-  &__logo {}
 
   &__nav {
     display: flex;
@@ -268,10 +264,6 @@ input[type="number"] {
     padding-top: 8px;
   }
 
-  &__form {}
-
-  &__crit {}
-
   &__submit {
     width: 100%;
     margin: 24px 0;
@@ -293,8 +285,6 @@ input[type="number"] {
     padding-bottom: 8px;
     color: var(--dark-gray);
   }
-
-  &__title {}
 
   &__arrow {
     background: none;
@@ -428,10 +418,6 @@ input[type="number"] {
   }
 }
 
-#criterian-third {}
-
-#criterian-fourth {}
-
 //filter
 
 //showcase
@@ -457,18 +443,10 @@ input[type="number"] {
     column-gap: 16px;
   }
 
-  &__prev-btn {}
-
   &__pages {
     display: flex;
     column-gap: 16px;
   }
-
-  &__page-btn {}
-
-  &__next-btn {}
-
-  &__sort {}
 
   &__sort-options {
     appearance: none;
@@ -489,8 +467,6 @@ input[type="number"] {
     row-gap: 16px;
     margin: 16px 0;
   }
-
-  &__product {}
 
   &__footer {
     display: flex;
@@ -532,8 +508,6 @@ input[type="number"] {
     padding: 0 16px;
   }
 
-  &__information {}
-
   &__title {
     padding-bottom: 7px;
   }
@@ -573,8 +547,6 @@ input[type="number"] {
 .footer {
   background: var(--bg-gray);
 
-  &__container {}
-
   &__content {
     background: var(--white);
     padding: 39px 0 24px;
@@ -587,12 +559,6 @@ input[type="number"] {
     line-height: 21px;
     padding: 0 16px 16px;
   }
-
-  &__logo {}
-
-  &__separator {}
-
-  &__name {}
 
   &__body {
     display: flex;
@@ -625,8 +591,6 @@ input[type="number"] {
     display: flex;
     column-gap: 12px;
   }
-
-  &__icon {}
 
   &__texts {
     flex: 1 1 100%;

@@ -13,8 +13,7 @@
   <header class="header"> 
     <div class="header__container container"> 
       <div class="header__main"> 
-        <h3 class="header__title"> </h3>Header<span class="header__separator"> /  </span>
-        <h3 class="header__logo">Logo</h3>
+        <h3 class="header__title">Header / Logo</h3>
       </div>
       <nav class="header__nav"> 
         <ul class="header__nav-list"> 
@@ -45,21 +44,21 @@
                   <h4 class="criterian__title">Param 1</h4>
                   <button class="criterian__arrow" type="button"> <img src="./assets/svg/arrow.svg" alt=""></button>
                 </div>
-                <div class="criterian__body"> 
-                  <label class="criterian__checkbox-label" for="crit-checkbox-1">
-                    <input class="criterian__checkbox" id="crit-checkbox-1" type="checkbox" name="param1"><span class="criterian__square"></span><span class="criterian__text">Value 1</span>
+                <div class="criterian__body">
+                  <label class="criterian__checkbox checkbox" for="crit-checkbox-1">
+                    <input class="checkbox__input" id="crit-checkbox-1" type="checkbox" name="param1"><span class="checkbox__square"></span><span class="checkbox__text">Value 1</span>
                   </label>
-                  <label class="criterian__checkbox-label" for="crit-checkbox-2">
-                    <input class="criterian__checkbox" id="crit-checkbox-2" type="checkbox" name="param1"><span class="criterian__square"></span><span class="criterian__text">Value 2</span>
+                  <label class="criterian__checkbox checkbox" for="crit-checkbox-2">
+                    <input class="checkbox__input" id="crit-checkbox-2" type="checkbox" name="param1" checked><span class="checkbox__square"></span><span class="checkbox__text">Value 2</span>
                   </label>
-                  <label class="criterian__checkbox-label" for="crit-checkbox-3">
-                    <input class="criterian__checkbox" id="crit-checkbox-3" type="checkbox" checked name="param1"><span class="criterian__square"></span><span class="criterian__text">Value 3</span>
+                  <label class="criterian__checkbox checkbox" for="crit-checkbox-3">
+                    <input class="checkbox__input" id="crit-checkbox-3" type="checkbox" name="param1" checked><span class="checkbox__square"></span><span class="checkbox__text">Value 3</span>
                   </label>
-                  <label class="criterian__checkbox-label" for="crit-checkbox-4">
-                    <input class="criterian__checkbox" id="crit-checkbox-4" type="checkbox" checked name="param1"><span class="criterian__square"></span><span class="criterian__text">Value 4</span>
+                  <label class="criterian__checkbox checkbox" for="crit-checkbox-4">
+                    <input class="checkbox__input" id="crit-checkbox-4" type="checkbox" name="param1"><span class="checkbox__square"></span><span class="checkbox__text">Value 4</span>
                   </label>
-                  <label class="criterian__checkbox-label" for="crit-checkbox-5">
-                    <input class="criterian__checkbox" id="crit-checkbox-5" type="checkbox" name="param1"><span class="criterian__square"></span><span class="criterian__text">Value 5</span>
+                  <label class="criterian__checkbox checkbox" for="crit-checkbox-5">
+                    <input class="checkbox__input" id="crit-checkbox-5" type="checkbox" name="param1"><span class="checkbox__square"></span><span class="checkbox__text">Value 5</span>
                   </label>
                 </div>
               </div>
@@ -68,15 +67,15 @@
                   <h4 class="criterian__title">Param 2</h4>
                   <button class="criterian__arrow" type="button"> <img src="./assets/svg/arrow.svg" alt=""></button>
                 </div>
-                <div class="criterian__body"> 
-                  <label class="criterian__radio-label" for="crit-radio-1"> 
-                    <input class="criterian__radio" id="crit-radio-1" type="radio" name="param2"><span class="criterian__circle"></span><span class="criterian__text">Value 2_1</span>
+                <div class="criterian__body">
+                  <label class="criterian_radio radio" for="crit-radio-1"> 
+                    <input class="radio__input" id="crit-radio-1" type="radio" name="param2"><span class="radio__circle"></span><span class="radio__text">Value 2_1</span>
                   </label>
-                  <label class="criterian__radio-label" for="crit-radio-2"> 
-                    <input class="criterian__radio" id="crit-radio-2" type="radio" name="param2"><span class="criterian__circle"></span><span class="criterian__text">Value 2_2</span>
+                  <label class="criterian_radio radio" for="crit-radio-2"> 
+                    <input class="radio__input" id="crit-radio-2" type="radio" name="param2"><span class="radio__circle"></span><span class="radio__text">Value 2_2</span>
                   </label>
-                  <label class="criterian__radio-label" for="crit-radio-3"> 
-                    <input class="criterian__radio" id="crit-radio-3" type="radio" checked name="param2"><span class="criterian__circle"></span><span class="criterian__text">Value 2_3</span>
+                  <label class="criterian_radio radio" for="crit-radio-3"> 
+                    <input class="radio__input" id="crit-radio-3" type="radio" name="param2" checked><span class="radio__circle"></span><span class="radio__text">Value 2_3</span>
                   </label>
                 </div>
               </div>
@@ -86,8 +85,8 @@
                   <button class="criterian__arrow" type="button"> <img src="./assets/svg/arrow.svg" alt=""></button>
                 </div>
                 <div class="criterian__body"> 
-                  <input class="criterian__number" type="number" name="para3min" placeholder="min">
-                  <input class="criterian__number" type="number" name="para3max" placeholder="max">
+                  <input class="criterian__number input-number" type="number" name="param3min" placeholder="min">
+                  <input class="criterian__number input-number" type="number" name="param3max" placeholder="max">
                 </div>
               </div>
               <div class="filter__crit criterian" id="criterian-fourth">
@@ -96,7 +95,7 @@
                   <button class="criterian__arrow" type="button"> <img src="./assets/svg/arrow.svg" alt=""></button>
                 </div>
                 <div class="criterian__body"> 
-                  <input class="criterian__text" type="text" name="param4" placeholder="Keyword">
+                  <input class="criterian__text input-text" type="text" name="param4" placeholder="Keyword">
                 </div>
               </div>
               <button class="filter__submit button">SEARCH</button>
@@ -235,11 +234,7 @@
   <footer class="footer"> 
     <div class="footer__container container">
       <div class="footer__content">
-        <div class="footer__title"> 
-          <h2 class="footer__logo">Logo</h2>
-          <span class="footer__separator">/</span>
-          <h2 class="footer__name">Company name</h2>
-        </div>
+        <h3 class="footer__title">Logo / Company name</h3>
         <div class="footer__body">
           <div class="footer__info"> 
             <div class="footer__contacts"> 

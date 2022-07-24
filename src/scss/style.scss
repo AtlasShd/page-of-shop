@@ -2,21 +2,27 @@
 @import 'fonts';
 
 :root {
+  --blue: #56ccf2;
+  --white: #ffffff;
   --bg-gray: #d9d9d9;
   --bg-disabled: #e0e0e0;
   --font-disabled: #828282;
-  --footer-gray: #4f4f4f;
+  --nav-gray: #8d8d8d;
   --dark-gray: #333333;
   --text-gray: #828282;
   --light-gray: #c4c4c4;
-  --nav-gray: #8d8d8d;
+  --footer-gray: #4f4f4f;
   --border-gray: #bdbdbd;
   --border-blue: #2d9cdb;
-  --white: #ffffff;
-  --blue: #56ccf2;
   --link-blue: #2f80ed;
   --link-hover: #56ccf2;
   --link-visited: #9B51E0;
+}
+
+@mixin font($size: 16px, $weight: 400, $height: 20px) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
 }
 
 html {
@@ -27,42 +33,26 @@ html {
   transition: none !important;
 }
 
+//h1, h2, h3, h4
 h1 {
-  font-family: Roboto;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 26px;
-  letter-spacing: 0em;
-  text-align: left;
+  @include font(22px, 700, 26px);
 }
 
 h2 {
-  font-family: Roboto;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 23px;
-  letter-spacing: 0em;
-  text-align: left;
+  @include font(20px, 700, 23px);
 }
 
 h3 {
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 21px;
-  letter-spacing: 0em;
-  text-align: left;
+  @include font(18px, 500, 21px);
 }
 
 h4 {
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19px;
-  letter-spacing: 0em;
-  text-align: left;
+  @include font(16px, 500, 19px);
 }
 
+//h1, h2, h3, h4
+
+//link
 a {
   color: var(--link-blue);
   text-decoration: none;
@@ -78,6 +68,9 @@ a {
   }
 }
 
+//link
+
+//select, input:text, input:number
 select,
 input[type="text"],
 input[type="number"] {
@@ -97,13 +90,9 @@ input[type="number"] {
   }
 }
 
-.container {
-  max-width: 1180px;
-  height: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+//select, input:text, input:number
 
+//button
 .button {
   display: inline-flex;
   justify-content: center;
@@ -112,9 +101,7 @@ input[type="number"] {
   width: 35px;
   height: 35px;
   transform: translate(0);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19px;
+  @include font;
   transition: background 0.25s ease-out 0s, box-shadow 0.25s ease-out 0s, transform 0.25s ease-out 0s;
 
   &:hover {
@@ -140,21 +127,26 @@ input[type="number"] {
   transform: translateY(-2px);
 }
 
+//button
+
+.container {
+  max-width: 1180px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .header,
 .content {
   font-family: Roboto;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
+  @include font;
   letter-spacing: 0;
   text-align: left;
 }
 
 .footer {
   font-family: Roboto;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
+  @include font(14px, 400, 16px);
   letter-spacing: 0;
   text-align: left;
 }
@@ -174,10 +166,6 @@ input[type="number"] {
     padding: 16px;
     background: var(--white);
     margin-bottom: 20px;
-  }
-
-  &__separator {
-    padding: 0 5px;
   }
 
   &__nav {
@@ -207,9 +195,7 @@ input[type="number"] {
     align-items: center;
     height: 40px;
     padding: 16px;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
+    @include font(12px, 400, 14px);
   }
 
   &__bc-list {
@@ -295,17 +281,20 @@ input[type="number"] {
     gap: 8px;
   }
 
-  &__checkbox {
-    margin-right: 8px;
+  &__number {
+    width: 50%;
   }
 
-  &__checkbox-label,
-  &__radio-label {
-    display: flex;
+  &__text {
     width: 100%;
-    align-items: center;
-    cursor: pointer;
   }
+}
+
+.checkbox {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
 
   &__square {
     display: block;
@@ -326,15 +315,15 @@ input[type="number"] {
     }
   }
 
-  &__checkbox {
+  &__input {
     display: none;
     margin-right: 8px;
 
-    &:checked+.criterian__square::before {
+    &:checked+.checkbox__square::before {
       transform: scale(1.5);
     }
 
-    &:disabled+.criterian__square {
+    &:disabled+.checkbox__square {
       border: 1px solid var(--font-disabled);
 
       &::before {
@@ -346,6 +335,13 @@ input[type="number"] {
       }
     }
   }
+}
+
+.radio {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
 
   &__circle {
     display: block;
@@ -368,15 +364,15 @@ input[type="number"] {
     }
   }
 
-  &__radio {
+  &__input {
     display: none;
     margin-right: 8px;
 
-    &:checked+.criterian__circle::before {
+    &:checked+.radio__circle::before {
       transform: scale(1);
     }
 
-    &:disabled+.criterian__circle {
+    &:disabled+.radio__circle {
       border: 1px solid var(--font-disabled);
 
       &+.criterian__text {
@@ -384,34 +380,17 @@ input[type="number"] {
       }
     }
   }
-
-  &__number {
-    width: 50%;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: 0;
-
-  }
-
-  &__text {
-    width: 100%;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: 0;
-
-  }
 }
 
-#criterian-first {
-  & .criterian__body {
-    flex-direction: column;
-  }
+.input-number,
+.input-text {
+  font-family: Roboto;
+  @include font;
+  letter-spacing: 0;
 }
 
+
+#criterian-first,
 #criterian-second {
   & .criterian__body {
     flex-direction: column;
@@ -452,9 +431,7 @@ input[type="number"] {
     appearance: none;
     width: 207px;
     background: var(--white) url('../assets/svg/arrow.svg') no-repeat calc(100% - 8px) center;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
+    @include font;
 
     &:focus {
       background: var(--white) url('../assets/svg/focusedArrow.svg') no-repeat calc(100% - 8px) center;
@@ -513,9 +490,7 @@ input[type="number"] {
   }
 
   &__description {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 16px;
+    @include font(14px, 300, 16px);
     color: var(--text-gray);
   }
 
@@ -529,9 +504,7 @@ input[type="number"] {
     padding: 5px;
     background: var(--light-gray);
     color: var(--white);
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 14px;
+    @include font(12px, 300, 14px);
     text-align: center;
   }
 
@@ -553,10 +526,6 @@ input[type="number"] {
   }
 
   &__title {
-    display: flex;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 21px;
     padding: 0 16px 16px;
   }
 

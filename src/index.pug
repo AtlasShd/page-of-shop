@@ -12,10 +12,7 @@ body
   header.header 
     .header__container.container 
       .header__main 
-        h3.header__title 
-        | Header
-        span.header__separator  /  
-        h3.header__logo Logo
+        h3.header__title Header / Logo
       nav.header__nav 
         ul.header__nav-list 
           li.header__nav-item 
@@ -46,60 +43,60 @@ body
                   h4.criterian__title Param 1
                   button(type='button').criterian__arrow 
                     img(src="./assets/svg/arrow.svg", alt="")
-                .criterian__body 
-                  label.criterian__checkbox-label(for="crit-checkbox-1")
-                    input.criterian__checkbox#crit-checkbox-1(type="checkbox", name="param1")
-                    span.criterian__square
-                    span.criterian__text Value 1
-                  label.criterian__checkbox-label(for="crit-checkbox-2")
-                    input.criterian__checkbox#crit-checkbox-2(type="checkbox", name="param1")
-                    span.criterian__square
-                    span.criterian__text Value 2
-                  label.criterian__checkbox-label(for="crit-checkbox-3")
-                    input.criterian__checkbox#crit-checkbox-3(type="checkbox", checked, name="param1")
-                    span.criterian__square
-                    span.criterian__text Value 3
-                  label.criterian__checkbox-label(for="crit-checkbox-4")
-                    input.criterian__checkbox#crit-checkbox-4(type="checkbox", checked, name="param1")
-                    span.criterian__square
-                    span.criterian__text Value 4
-                  label.criterian__checkbox-label(for="crit-checkbox-5")
-                    input.criterian__checkbox#crit-checkbox-5(type="checkbox", name="param1")
-                    span.criterian__square
-                    span.criterian__text Value 5
+                .criterian__body
+                  label.criterian__checkbox.checkbox(for="crit-checkbox-1")
+                    input.checkbox__input#crit-checkbox-1(type="checkbox", name="param1")
+                    span.checkbox__square
+                    span.checkbox__text Value 1
+                  label.criterian__checkbox.checkbox(for="crit-checkbox-2")
+                    input.checkbox__input#crit-checkbox-2(type="checkbox", name="param1", checked)
+                    span.checkbox__square
+                    span.checkbox__text Value 2
+                  label.criterian__checkbox.checkbox(for="crit-checkbox-3")
+                    input.checkbox__input#crit-checkbox-3(type="checkbox", name="param1", checked)
+                    span.checkbox__square
+                    span.checkbox__text Value 3
+                  label.criterian__checkbox.checkbox(for="crit-checkbox-4")
+                    input.checkbox__input#crit-checkbox-4(type="checkbox", name="param1")
+                    span.checkbox__square
+                    span.checkbox__text Value 4
+                  label.criterian__checkbox.checkbox(for="crit-checkbox-5")
+                    input.checkbox__input#crit-checkbox-5(type="checkbox", name="param1")
+                    span.checkbox__square
+                    span.checkbox__text Value 5
               .filter__crit.criterian#criterian-second
                 .criterian__name 
                   h4.criterian__title Param 2
                   button(type='button').criterian__arrow 
                     img(src="./assets/svg/arrow.svg", alt="")
-                .criterian__body 
-                  label.criterian__radio-label(for="crit-radio-1") 
-                    input.criterian__radio#crit-radio-1(type="radio", name="param2")
-                    span.criterian__circle
-                    span.criterian__text Value 2_1
-                  label.criterian__radio-label(for="crit-radio-2") 
-                    input.criterian__radio#crit-radio-2(type="radio", name="param2")
-                    span.criterian__circle
-                    span.criterian__text Value 2_2
-                  label.criterian__radio-label(for="crit-radio-3") 
-                    input.criterian__radio#crit-radio-3(type="radio", checked, name="param2")
-                    span.criterian__circle
-                    span.criterian__text Value 2_3
+                .criterian__body
+                  label.criterian_radio.radio(for="crit-radio-1") 
+                    input.radio__input#crit-radio-1(type="radio", name="param2")
+                    span.radio__circle
+                    span.radio__text Value 2_1
+                  label.criterian_radio.radio(for="crit-radio-2") 
+                    input.radio__input#crit-radio-2(type="radio", name="param2")
+                    span.radio__circle
+                    span.radio__text Value 2_2
+                  label.criterian_radio.radio(for="crit-radio-3") 
+                    input.radio__input#crit-radio-3(type="radio", name="param2", checked)
+                    span.radio__circle
+                    span.radio__text Value 2_3
               .filter__crit.criterian#criterian-third
                 .criterian__name 
                   h4.criterian__title Param 3
                   button(type='button').criterian__arrow 
                     img(src="./assets/svg/arrow.svg", alt="")
                 .criterian__body 
-                  input.criterian__number(type="number", name="para3min", placeholder='min')
-                  input.criterian__number(type="number", name="para3max", placeholder='max')
+                  input.criterian__number.input-number(type="number", name="param3min", placeholder='min')
+                  input.criterian__number.input-number(type="number", name="param3max", placeholder='max')
               .filter__crit.criterian#criterian-fourth
                 .criterian__name 
                   h4.criterian__title Param 4
                   button(type='button').criterian__arrow 
                     img(src="./assets/svg/arrow.svg", alt="")
                 .criterian__body 
-                  input.criterian__text(type="text", name="param4", placeholder='Keyword')
+                  input.criterian__text.input-text(type="text", name="param4", placeholder='Keyword')
               button.filter__submit.button SEARCH
       main.main 
         section.showcase  
@@ -210,12 +207,7 @@ body
   footer.footer 
     .footer__container.container
       .footer__content
-        .footer__title 
-          h2.footer__logo Logo
-          |
-          |
-          span.footer__separator /
-          h2.footer__name Company name
+        h3.footer__title Logo / Company name
         .footer__body
           .footer__info 
             .footer__contacts 
